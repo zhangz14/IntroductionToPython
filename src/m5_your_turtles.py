@@ -29,29 +29,41 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 #  Don't forget to COMMIT your work by using  VCS ~ Commit and Push.
 ########################################################################
 import rosegraphics as rg
+
 window = rg.TurtleWindow()
+
 t95 = rg.SimpleTurtle('turtle')
 t95.pen = rg.Pen('orange',5)
-t95.speed = 50
+t95.speed = 10
 
-for a in range(15):
+for a in range(10):
+
     t95.draw_circle(radius=10+10*a)
+
     t95.pen_up()
     t95.right(90)
     t95.forward(10)
     t95.left(90)
+
     t95.pen_down()
 
 t110e3 = rg.SimpleTurtle('turtle')
 t110e3.pen = rg.Pen('red',3)
-t110e3.speed = 20
+t110e3.speed = 5
+
+size = 300
 
 for b in range(10):
-    t110e3.draw_circle(radius=10)
+
+    t110e3.draw_square(size)
+
     t110e3.pen_up()
-    t110e3.right(45)
-    t110e3.forward(20)
     t110e3.left(45)
-    t95.pen_down()
+    t110e3.backward(10)
+    t110e3.right(45)
+
+    t110e3.pen_down()
+
+    size=size-10
 
 window.close_on_mouse_click()
